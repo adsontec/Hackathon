@@ -4,9 +4,9 @@ export default function Feed() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../assets/Fundo.png")}
+        source={require("../../assets/Fundo.png")}
       />
-      <Text style={{fontSize: 20, position: 'absolute', padding: 15, color: "#FFF"}}>Parabéns, você está com consumo excelente!{"\n"}20 litros de consumo nas últimas 24h</Text>
+      <Text style={{fontSize: 26, position: 'absolute', padding: 15, color: "#FFF"}}>Parabéns, você está com consumo excelente!{"\n"}20 litros de consumo nas últimas 24h</Text>
     </View>
   );
 }

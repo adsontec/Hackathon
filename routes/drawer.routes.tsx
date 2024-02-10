@@ -1,9 +1,9 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Feather, FontAwesome5, Ionicons  } from '@expo/vector-icons';
 
-import Feed from '../screens/Feed';
-import New from '../screens/New';
-import Profile from '../screens/Profile'
+import Feed from '../src/screens/Feed';
+import New from '../src/screens/New';
+import Profile from '../src/screens/Profile'
 
 const Drawer = createDrawerNavigator();
 

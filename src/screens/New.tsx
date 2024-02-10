@@ -4,7 +4,7 @@ export default function New() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../assets/Fundo.png")}
+        source={require("../../assets/Fundo.png")}
       />
       <Text style={{fontSize: 22, position: 'absolute'}}> Gráficos </Text>
     </View>
