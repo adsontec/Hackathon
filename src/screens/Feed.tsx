@@ -1,21 +1,27 @@
-import { StyleSheet, View , Image, Text } from 'react-native';
+import { StyleSheet, View , SafeAreaView, Image, Text } from 'react-native';
 
 export default function Feed() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image
         source={require("../../assets/Fundo.png")}
       />
       <Text style={{fontSize: 26, position: 'absolute', padding: 15, color: "#FFF"}}>Parabéns, você está com consumo excelente!{"\n"}20 litros de consumo nas últimas 24h</Text>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ff56',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+  },
+  lista: {
+    width: 212,
+    height: 40,
+    backgroundColor: "#FFF",
+    position: "absolute",
+    
   }
 });
