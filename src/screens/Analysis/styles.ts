@@ -6,3 +6,16 @@ export const Container = styled.SafeAreaView`
   align-items: center;
   justify-content: center;
 `;
+
+export const ViewGraph= styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+`;
+
+export const TextGraph= styled.Text`
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFF;
+`;

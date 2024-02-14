@@ -6,7 +6,7 @@ import { Setting } from "./src/screens/Setting";
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 
 import { Feather, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 
