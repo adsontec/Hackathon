@@ -14,7 +14,7 @@ export const ViewPrincipal = styled.View`
 `;
 
 export const TextPrincipal = styled.Text`
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     padding: 12px;
     color: #FFF;
@@ -23,15 +23,15 @@ export const TextPrincipal = styled.Text`
 export const TextSegundario = styled.Text`
   position: absolute;
   padding: 60px;
-  font-Size: 38px;
+  font-Size: 30px;
   font-Weight: bold;
-  color: #1D6AFF;
+  color: #fff;
 `;
 
 export const TextR = styled.Text`
-  font-Size: 32px;
+  font-Size: 26px;
   font-Weight: bold;
-  color: #272353;
+  color: #fff;
 `;
 
 export const ScrollR = styled.ScrollView`

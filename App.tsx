@@ -40,7 +40,7 @@ export default function App() {
           </View>
           ) }} />
         <Tab.Screen name="Alarm" component={Alarm} options={{ headerShown: false, tabBarIcon: ({ focused }) => (
-          <View style={{top: -20, position: 'absolute', backgroundColor: '#fff', borderRadius: 30, padding: 10, elevation: 5 }}>
+          <View style={{top: -20, position: 'absolute', backgroundColor: '#fff', borderRadius: 30, padding: 10, elevation: 5, shadowColor: '#062f6d', shadowOpacity: 1.0, shadowOffset: { width: 0, height: 1 } }}>
             <MaterialIcons style={{color: focused ? '#2f32e3' : '#748c94'}} name="access-alarms" size={40} />
           </View>
           ) }} />
