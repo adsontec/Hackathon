@@ -15,7 +15,8 @@ export const ViewGraph= styled.View`
 `;
 
 export const TextGraph= styled.Text`
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
     color: #FFF;
+    padding-bottom: 25%;
 `;
