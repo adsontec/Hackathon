@@ -36,7 +36,7 @@ client.on('connect', function () {
 });
 
 client.on('message', function (topic, message) {
-    console.log(`Received message: ${topic} - ${message.toString()}`);
+    console.log(`R: ${message.toString()}`);
     mqtt_data[topic] = message.toString();
 });
 

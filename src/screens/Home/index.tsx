@@ -1,10 +1,24 @@
-
+import React, {useState} from "react"
 import { View, Image} from 'react-native';
 import { Container, ViewPrincipal, TextPrincipal, TextSegundario, TextR, ScrollR, Buttom, ViewButtom, TextButton, TextButtonTime } from './styles';
 
 import { Ionicons } from '@expo/vector-icons';
+import Api from '../../Services/Api';
 
 export function Home() {
+
+  const [parameter, setParameter] = useState("")
+
+  async function buscarDados() {
+    try{
+      const response = await Api.get('/data/')
+      setParameter(response.data.parameter)
+    }catch(error){
+      console.log("ERRO" + error)
+    }
+
+  }
+
   return (
       <Container>
         <Image source={require("../../../assets/Fundo.png")} />
@@ -16,7 +30,7 @@ export function Home() {
           </View>
           <TextR> Registro de uso hoje </TextR>
           <ScrollR showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 16}}>
-          <Buttom>
+          <Buttom onPress={buscarDados}>
             <ViewButtom>
               <Ionicons name="water" size={24} color="#90e0fe" />
               <TextButton> 2500 ml </TextButton>
