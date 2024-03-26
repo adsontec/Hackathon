@@ -1,22 +1,31 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { View, Image} from 'react-native';
 import { Container, ViewPrincipal, TextPrincipal, TextSegundario, TextR, ScrollR, Buttom, ViewButtom, TextButton, TextButtonTime } from './styles';
 
 import { Ionicons } from '@expo/vector-icons';
-import Api from '../../Services/Api';
+
+interface Item {
+  id: number;
+  title: string;
+}
 
 export function Home() {
-
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<Item[]>([]);
   const [parameter, setParameter] = useState("")
+
+  useEffect(() => {
+    buscarDados();
+  }, [])
 
   async function buscarDados() {
     try{
-      const response = await Api.get('/data/')
-      setParameter(response.data.parameter)
+      const response = await fetch('http://192.168.15.181:3000/data/');
+      const json = await response.json();
+      console.log(json)
     }catch(error){
       console.log("ERRO" + error)
     }
-
   }
 
   return (
@@ -84,4 +93,3 @@ export function Home() {
       </Container>
   );
 }
-
