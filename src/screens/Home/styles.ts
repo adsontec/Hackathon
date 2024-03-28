@@ -35,15 +35,15 @@ export const TextR = styled.Text`
 `;
 
 export const ScrollR = styled.ScrollView`
-  width: 250px;
+  width: 400px;
   height: 380px;
   margin-top: 20px;
   margin-bottom: 20px;
 `;
 
 export const Buttom = styled.TouchableOpacity`
-  width: 250px;
-  height: 60px;
+  width: 400px;
+  height: 200px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
@@ -57,7 +57,7 @@ export const ViewButtom = styled.View`
 `;
 
 export const TextButton = styled.Text`
-  font-size: 22px;
+  font-size: 28px;
   color: #7B81A6;
 `;
 

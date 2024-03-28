@@ -1,31 +1,28 @@
 import React, {useState, useEffect} from "react"
-import { View, Image} from 'react-native';
+import { View, Image, ActivityIndicator} from 'react-native';
 import { Container, ViewPrincipal, TextPrincipal, TextSegundario, TextR, ScrollR, Buttom, ViewButtom, TextButton, TextButtonTime } from './styles';
 
 import { Ionicons } from '@expo/vector-icons';
 
-interface Item {
-  id: number;
-  title: string;
-}
+const movieURL = "http://192.168.15.181:3000/data/";
 
 export function Home() {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<Item[]>([]);
-  const [parameter, setParameter] = useState("")
+  const [title, setTitle] = useState([]);
 
   useEffect(() => {
     buscarDados();
   }, [])
 
   async function buscarDados() {
-    try{
-      const response = await fetch('http://192.168.15.181:3000/data/');
-      const json = await response.json();
-      console.log(json)
-    }catch(error){
-      console.log("ERRO" + error)
-    }
+    fetch(movieURL)
+      .then((response) => response.json()) // get response, convert to json
+      .then((json) => {
+        setTitle(Object.values(json))
+        console.log(Object.values(json));
+      })
+      .catch((error) => alert(error)) // display errors
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -42,51 +39,8 @@ export function Home() {
           <Buttom onPress={buscarDados}>
             <ViewButtom>
               <Ionicons name="water" size={24} color="#90e0fe" />
-              <TextButton> 2500 ml </TextButton>
+              {loading ? (<ActivityIndicator />) : (<TextButton> {title} </TextButton>)}
             </ViewButtom>
-            <TextButtonTime> 8:00 am </TextButtonTime>
-          </Buttom>
-          <Buttom>
-            <ViewButtom>
-              <Ionicons name="water" size={24} color="#90e0fe" />
-              <TextButton> 2000 ml </TextButton>
-            </ViewButtom>
-            <TextButtonTime> 10:00 am </TextButtonTime>
-          </Buttom>
-          <Buttom>
-            <ViewButtom>
-              <Ionicons name="water" size={24} color="#90e0fe" />
-              <TextButton> 5000 ml </TextButton>
-            </ViewButtom>
-            <TextButtonTime> 11:00 am </TextButtonTime>
-          </Buttom>
-          <Buttom>
-            <ViewButtom>
-              <Ionicons name="water" size={24} color="#90e0fe" />
-              <TextButton> 2900 ml </TextButton>
-            </ViewButtom>
-            <TextButtonTime> 01:00 pm </TextButtonTime>
-          </Buttom>
-          <Buttom>
-            <ViewButtom>
-              <Ionicons name="water" size={24} color="#90e0fe" />
-              <TextButton> 2500 ml </TextButton>
-            </ViewButtom>
-            <TextButtonTime> 03:00 pm </TextButtonTime>
-          </Buttom>
-          <Buttom>
-            <ViewButtom>
-              <Ionicons name="water" size={24} color="#90e0fe" />
-              <TextButton> 3000 ml </TextButton>
-            </ViewButtom>
-            <TextButtonTime> 04:00 pm </TextButtonTime>
-          </Buttom>
-          <Buttom>
-            <ViewButtom>
-              <Ionicons name="water" size={24} color="#90e0fe" />
-              <TextButton> 4000 ml </TextButton>
-            </ViewButtom>
-            <TextButtonTime> 05:00 pm </TextButtonTime>
           </Buttom>          
           </ScrollR>
         </ViewPrincipal>
